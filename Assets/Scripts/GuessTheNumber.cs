@@ -36,7 +36,6 @@ public class NewBehaviourScript : MonoBehaviour{
         if (textInput != null && !(chancesLeft <= 0)){
             userGuess = int.Parse(textInput.text);
             //Debug.Log("Guess Has Been Saved");
-            chancesLeft -= 1;
             isGuessInRange();
             //Debug.Log("Guesses Left: " + chancesLeft.ToString());
         }
@@ -58,6 +57,7 @@ public class NewBehaviourScript : MonoBehaviour{
         }
         //If the number is in range
         else{
+            chancesLeft -= 1;
             IsGuessCorrect();
         }
     }
