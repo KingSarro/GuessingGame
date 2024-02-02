@@ -30,7 +30,7 @@ public class NewBehaviourScript : MonoBehaviour{
         chancesLeft = 3;
         guessText.text = "Welcome to the guessing game. You have " + chancesLeft.ToString() + " chances  to guess a number between 1-10.";
         textInput.text = "Enter A Number...";
-        Debug.Log("the answer is " + correctNumber.ToString());
+        //Debug.Log("the answer is " + correctNumber.ToString());
     }
     public void SubmitGuess(){
         if (textInput != null && !(chancesLeft <= 0)){
@@ -38,7 +38,7 @@ public class NewBehaviourScript : MonoBehaviour{
             //Debug.Log("Guess Has Been Saved");
             chancesLeft -= 1;
             isGuessInRange();
-            Debug.Log("Guesses Left: " + chancesLeft.ToString());
+            //Debug.Log("Guesses Left: " + chancesLeft.ToString());
         }
     }
     
@@ -74,12 +74,13 @@ public class NewBehaviourScript : MonoBehaviour{
                     guessText.text = "Nope, try again. You have " + chancesLeft.ToString() + " chances left.";
                     break;
                 case 1:
-                    guessText.text = "Uh, oh. You have " + chancesLeft.ToString() + " chance left";
+                    guessText.text = "Uh, oh. You have " + chancesLeft.ToString() + " chance left.";
                     break;
                 default:
                     guessText.text = "Your bad at guessing. The number was " + correctNumber.ToString() + ". Reset to try again.";
                     break;
             }
+            textInput.text = "Enter A Number...";
         }
     }
 }
